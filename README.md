@@ -1,6 +1,6 @@
 # DarkVPN
 
-![DarkVPN Logo](images/DarkVPN_LOGO.png)
+![DarkVPN Logo](DarkVPN_LOGO_p.png)
 
 Добро пожаловать в DarkVPN — самое быстрое и простое в использовании VPN-расширение! 🚀
 
