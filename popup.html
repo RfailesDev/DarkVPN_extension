@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkVPN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="container">
+    <div class="dark-vpn-title">DarkVPN</div>
+    <div id="userInfo">........</div>
+    <div class="version-text">V-0.7</div>
+    <div id="userKeySection" class="user-key-section">
+        <div class="user-key-prompt">Введите ваш ключ пользователя:</div>
+        <input type="text" id="userKeyInput" class="user-key-input" placeholder="Ваш ключ">
+        <button id="saveUserKeyButton" class="save-user-key-button">Сохранить</button>
+    </div>
+    <div class="toggle-container">
+        <button id="toggleButton">
+            <img src="images/DarkVPN_LOGO.png" class="button-logo">
+            <div class="b-title">Connect</div>
+        </button>
+    </div>
+    <div class="menu-container">
+        <div class="setting-bar" id="autoConnectSetting">
+            <div class="setting-tile">Автоподключение</div>
+            <div class="setting-switcher">
+                <div class="switcher-ball"></div>
+            </div>
+        </div>
+        <div class="setting-bar" id="adBlockSetting">
+            <div class="setting-tile">Блокировка рекламы</div>
+            <div class="setting-switcher">
+                <div class="switcher-ball"></div>
+            </div>
+        </div>
+        <div class="logout-section">
+            <button id="logoutButton" class="logout-button">Выйти</button>
+        </div>
+    </div>
+    <div class="info-container">
+        <div class="buttons-row">
+            <button class="control-btn" id="home-btn">
+                <img src="images/icons/DarkVPN_icon_house3.png" class="control-btn-icon">
+                <img src="images/icons/DarkVPN_icon_house3.png" class="control-btn-icon control-btn-glow">
+            </button>
+            <button class="control-btn" id="menu-btn">
+                <img src="images/icons/DarkVPN_icon_bars2.png" class="control-btn-icon">
+                <img src="images/icons/DarkVPN_icon_bars2.png" class="control-btn-icon control-btn-glow">
+            </button>
+        </div>
+    </div>
+</div>
+<div class="gradient-point"></div>
+<script src="js/jquery-3.7.1.min.js"></script>
+<script src="js/popup.js"></script>
+<script src="js/menu.js"></script>
+</body>
+</html>

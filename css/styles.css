@@ -1,0 +1,399 @@
+:root {
+    --violet-color: #6e41e1
+}
+
+body {
+    width: 320px;
+    height: 500px;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #1e1e1f;
+    border: none;
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.dark-vpn-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 32px;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: #6a6a6a;
+    padding: 1px 10px;
+    /* background-color: #ffffff1f; */
+    /* border-radius: 10px; */
+    transition: opacity 0.2s;
+}
+
+.version-text {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(255 255 255 / 15%);
+    font-size: 10px;
+}
+
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    height: 100%;
+    align-items: center;
+    transition: height 0.3s ease;
+}
+
+#toggleButton {
+    display: flex;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #333333;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#toggleButton::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 70%);
+    transition: all 0.3s ease;
+    transform: scale(1);
+    opacity: 1;
+}
+
+#toggleButton.connected::before {
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.2) 0%, rgb(77 46 205 / 20%) 50%, rgba(138, 43, 226, 0) 70%);
+    animation: pulse 2s infinite;
+}
+
+#toggleButton:hover {
+    transform: scale(1.05);
+}
+
+#toggleButton:active {
+    transition: all 0.1s;
+    transform: scale(0.95);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.button-logo {
+    width: 50%;
+    height: 50%;
+    transition: opacity 0.3s ease;
+}
+
+.menu-container {
+    display: flex;
+    padding: 0 20px 0 20px;
+    position: absolute;
+    z-index: 5;
+    height: 350px;
+    /* width: calc(100% - 40px); */
+    background-color: #212121;
+    border-radius: 10px;
+    transform: translate(-50%, -50%) scale(0.9);
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.1s;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-container {
+    display: flex;
+    padding: 10px;
+    z-index: 2;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.info-label {
+    font-weight: 300;
+}
+
+.info-value {
+    font-weight: 500;
+}
+
+.buttons-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.control-btn {
+    display: flex;
+    height: 32px;
+    width: 32px;
+    background: none;
+    border: none;
+    outline: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.control-btn .control-btn-icon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.control-btn .control-btn-glow {
+    opacity: 0;
+    transition: opacity 0.2s;
+    filter: blur(5px);
+}
+
+.control-btn:hover .control-btn-glow {
+    opacity: 0.2;
+}
+
+.control-btn:hover {
+    transform: scale(1.05);
+}
+
+.control-btn:active {
+    transform: scale(0.98);
+}
+
+
+.hide-logo .button-logo {
+    transition: opacity 0.1s ease;
+    opacity: 0;
+}
+
+
+.shrink-button .toggle-container {
+    height: 100px;
+}
+
+.shrink-button {
+    #toggleButton {
+        height: 35px;
+        width: 130px;
+        border-radius: 50px;
+    }
+
+    #toggleButton::before {
+        opacity: 0;
+        animation: none;
+    }
+
+    #toggleButton:hover {
+        transform: scale(1);
+        opacity: 0.95;
+    }
+
+    #toggleButton:active {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+}
+
+.display-tb-title {
+    .b-title {
+        transition: opacity 0.3s;
+        opacity: 1;
+    }
+}
+
+.shrink-button #toggleButton::before {
+    opacity: 0;
+}
+
+
+.show-menu .menu-container {
+    transition: transform 0.2s, opacity 0.2s ease;
+    pointer-events: all;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+
+#toggleButton.connected {
+    background-color: var(--violet-color);
+}
+
+.b-title {
+    transition: opacity 0.1s;
+    position: absolute;
+    opacity: 0;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(255, 255, 255, 0.93);
+}
+
+
+.setting-bar {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    /* height: 50px; */
+    /* background-color: rgb(255 255 255 / 0%); */
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.setting-tile {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.setting-switcher {
+    display: flex;
+    height: 30px;
+    width: 54px;
+    background-color: #ffffff26;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+}
+
+.switcher-ball {
+    height: 24px;
+    width: 24px;
+    background-color: white;
+    border-radius: 100%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    transition: all 0.1s;
+}
+
+.setting-bar.active .setting-switcher {
+    background-color: var(--violet-color);
+}
+
+.switcher-ball-active {
+    transform: translateX(50%);
+}
+
+
+.user-key-section {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    z-index: 9999;
+    height: 100%;
+    justify-content: center;
+}
+
+.user-key-prompt {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.user-key-input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.save-user-key-button {
+    padding: 10px 20px;
+    background-color: var(--violet-color);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.save-user-key-button:hover {
+    background-color: #5a2ecb;
+}
+
+.save-user-key-button:active {
+    background-color: #4b26aa;
+}
+
+#userInfo {
+    display: flex;
+    position: absolute;
+    left: 5px;
+    /* transform: translateX(-50%); */
+    top: 5px;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: #6a6a6a;
+    /* padding: 1px 10px; */
+    /* background-color: #ffffff1f; */
+    /* border-radius: 10px; */
+    transition: opacity 0.2s;
+    flex-direction: row;
+    gap: 5px;
+    p {
+        margin: 0;
+    }
+}
+
+.logout-section {
+    margin-top: 20px;
+}
+
+.logout-button {
+    padding: 10px 20px;
+    background-color: #ff4d4d; /* Red color */
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background-color: #e60000;
+}
+
+.logout-button:active {
+    background-color: #cc0000;
+}
